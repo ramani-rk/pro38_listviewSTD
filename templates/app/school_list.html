@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListView</title>
+    <style>
+        table,tr,th,td
+        {
+            border: 2px solid;
+            border-collapse: collapse;
+            width: 150px;
+            padding:10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>List of the School Objects</h1>
+
+        <table>
+                <tr>
+                    <th>School Name</th>
+                </tr>
+                {% for school in schools %}
+
+                <tr> 
+                    <td>
+                    <a href="{{school.pk}}">{{school.sname}}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+        </table>
+
+    </center>
+</body>
+</html>
