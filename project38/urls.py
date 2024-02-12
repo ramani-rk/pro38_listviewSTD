@@ -15,9 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
+# re-path is a (regular expression) its, used to perform dynamic URL mapping
 from app.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('SchoolList/',SchoolList.as_view(),name='SchoolList'),
+    re_path('(?P<pk>\d+)/',SchoolDetail.as_view(),name='SchoolDetail'),
+
+    # ?P - is used for capture the data
+    # <pk> - is used for store the captured data
+    # \d - is used for numbers in regX... + is used for no.of digits (\d+ is used for validations)
+    # (?P<pk>\d+) - These all regX group
+    
 ]
