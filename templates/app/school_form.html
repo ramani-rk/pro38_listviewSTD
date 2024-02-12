@@ -1,0 +1,36 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>SchoolForm</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+
+<!-- Updating the School Bcoz, Data's are already present in the table. instance holds the address of instance -->
+        {% if form.instance.pk %}
+            <h1>Update Form of School</h1>
+
+
+<!-- Creating the New School Bcoz, There is no data -->
+        {% else %}
+            <h1>Create Form of School</h1>
+        {% endif %}
+
+
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+
+
+
+        {% if form.instance.pk %}
+            <input type="submit" value="Update School" ></a>
+
+        {% else%}
+                <input type="submit" value="Create School">
+        {% endif %}
+        </form>
+        
+    </center>
+{% endblock %}

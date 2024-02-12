@@ -9,8 +9,8 @@ class School(models.Model):
     sloc=models.CharField(max_length=100)
 
 
-# get_absolute_url is used to done a dynamic URL mapping (or) cananical URL mapping and its a object method
-# cananical URL mapping is a process of creating URL suffixes dynamically, based on selected instance.
+# get_absolute_url is used to done a dynamic URL mapping (or) canonical URL mapping and its a object method
+# canonical URL mapping is a process of creating URL suffixes dynamically, based on selected instance.
 # instance means currently presented address. self holds the address of the instance.
 
     def get_absolute_url(self):
